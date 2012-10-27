@@ -25,9 +25,23 @@ time.
 
 # Api
 
-## el(id)
+## element = el(id)
 
 Returns the element which matches id
+
+`element' is augmented with the following methods:
+
+### element.hide()
+
+Hides the element
+
+### element.show()
+
+Shows the element
+
+### element.addClass(className)
+
+Adds `className` to the element
 
 # Contribute
 
