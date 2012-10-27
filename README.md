@@ -37,7 +37,7 @@ Get the sources at github: http://github.com/pfraces/dal
 
 (The MIT License)
 
-Copyright (c) 2011 [pfraces](http://github.com/pfraces)
+Copyright (c) 2012 [pfraces](http://github.com/pfraces)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the 'Software'), to deal in
