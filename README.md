@@ -29,7 +29,7 @@ time.
 
 Returns the element which matches id
 
-`element' is augmented with the following methods:
+`element` is augmented with the following methods:
 
 ### element.hide()
 
