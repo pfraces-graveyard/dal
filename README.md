@@ -33,6 +33,10 @@ Returns the element which matches id
 
 ## Element management
 
+### el.add(tagName, content)
+
+Appends a new element to the element
+
 ### el.del()
 
 Removes the element itself
