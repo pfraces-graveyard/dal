@@ -14,8 +14,7 @@ js:
     dal('foo')
       .empty()
       .add('h1', 'It works!')
-      .fgc('white')
-      .bgc('red')
+      .color('white', 'red')
       .size('300px', '300px');
 
 # Install
@@ -72,13 +71,9 @@ Shows the element
 
 Determines if the element is overflowing its bounds
 
-### el.bgc(color)
+### el.color(bgcolor, fgcolor)
 
-Changes the background color of the element
-
-### el.fgc(color)
-
-Changes the text color of the element
+Changes the background and text color of the element
 
 # Contribute
 
