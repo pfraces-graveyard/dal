@@ -25,23 +25,35 @@ time.
 
 # Api
 
-## element = dal(id)
+## el = dal(id)
 
 Returns the element which matches id
 
-`element` is augmented with the following methods:
+`el` is augmented with the following methods
 
-### element.hide()
+## Element management
+
+### el.del()
+
+Removes the element itself
+
+### el.empty()
+
+Removes all the element children
+
+## CSS alteration
+
+### el.addClass(className)
+
+Adds `className` to the element
+
+### el.hide()
 
 Hides the element
 
-### element.show()
+### el.show()
 
 Shows the element
-
-### element.addClass(className)
-
-Adds `className` to the element
 
 # Contribute
 
