@@ -1,4 +1,4 @@
-# dal
+# DAL
 
 DOM abstraction layer _(homemade alternative to jquery)_
 
@@ -11,7 +11,12 @@ html:
 
 js:
 
-    dal('foo').innerHTML = 'It works!';
+    dal('foo')
+      .empty()
+      .add('h1', 'It works!')
+      .fgc('white')
+      .bgc('red')
+      .size('300px', '300px');
 
 # Install
 
@@ -19,17 +24,19 @@ js:
 
 # Status
 
-dal is a work-in-progress and is only intended for my personal use at this
+DAL is a work-in-progress and is only intended for my personal use at this
 time. 
 
-# Api
+# API
+
+Now the API is chainable!
 
 ## el = dal(selector)
 
 Returns the element `el` which id is _selector_
 
-If no _selector_ is especified, a `div` element is created under `document`
-(so is visible) and returned
+If no _selector_ is especified, a `div` element is created under
+`document.body` (so is visible) and its returned instead
 
 `el` is augmented with the following methods
 
@@ -64,6 +71,14 @@ Shows the element
 ### el.overflow()
 
 Determines if the element is overflowing its bounds
+
+### el.bgc(color)
+
+Changes the background color of the element
+
+### el.fgc(color)
+
+Changes the text color of the element
 
 # Contribute
 
