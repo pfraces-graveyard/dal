@@ -1,7 +1,7 @@
 {
   "name": "dal",
-  "version": "0.1.0",
-  "description": "DOM abstraction layer",
+  "version": "0.1.1",
+  "description": "DOM Abstraction Layer",
   "main": "./lib/index.js",
   "dependencies": {},
   "scripts": {

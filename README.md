@@ -1,6 +1,6 @@
 # dal
 
-DOM abstraction layer (homemade alternative to jquery)
+DOM abstraction layer _(homemade alternative to jquery)_
 
 # Example
 
@@ -12,7 +12,7 @@ js:
 
     var dal = require('dal');
 
-    dal.el('foo').innerHTML = 'It works!';
+    dal('foo').innerHTML = 'It works!';
 
 # Install
 
@@ -25,7 +25,7 @@ time.
 
 # Api
 
-## element = el(id)
+## element = dal(id)
 
 Returns the element which matches id
 
