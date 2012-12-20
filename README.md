@@ -55,6 +55,10 @@ Hides the element
 
 Shows the element
 
+### el.overflow()
+
+Determines if the element is overflowing its bounds
+
 # Contribute
 
 Get the sources at github: http://github.com/pfraces/dal
