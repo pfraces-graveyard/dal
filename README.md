@@ -7,10 +7,9 @@ DOM abstraction layer _(homemade alternative to jquery)_
 html:
 
     <div id="foo">Bad news ...</div>
+    <script src="dal.js"></script>
 
 js:
-
-    var dal = require('dal');
 
     dal('foo').innerHTML = 'It works!';
 
@@ -25,9 +24,12 @@ time.
 
 # Api
 
-## el = dal(id)
+## el = dal(selector)
 
-Returns the element which matches id
+Returns the element `el` which id is _selector_
+
+If no _selector_ is especified, a `div` element is created under `document`
+and returned
 
 `el` is augmented with the following methods
 
