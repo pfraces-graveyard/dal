@@ -29,7 +29,7 @@ time.
 Returns the element `el` which id is _selector_
 
 If no _selector_ is especified, a `div` element is created under `document`
-and returned
+(so is visible) and returned
 
 `el` is augmented with the following methods
 
