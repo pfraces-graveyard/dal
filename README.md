@@ -56,9 +56,11 @@ If no _selector_ is especified, a `div` element is created under
 
 ## Element management
 
-### el.add(tagName, content)
+### el.add(elm, content)
 
 Appends a new element to the element
+
+`elm` can be a string (for example `'p'` or `'div'`) or an existing DOM element
 
 ### el.clone()
 
