@@ -100,6 +100,12 @@ Changes the background and text color of the element
 
 Changes the size of the element
 
+## Misc utilities
+
+### el.html
+
+Sets the `innerHTML` value of the element
+
 # Contribute
 
 Get the sources at github: http://github.com/pfraces/dal
