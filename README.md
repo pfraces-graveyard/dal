@@ -23,11 +23,14 @@ js:
     content.add('h1', 'bar');
 
 If you get
+
 ![bad news](https://github.com/pfraces/dal/raw/master/badnews.png)
+
 please, [create an issue](https://github.com/pfraces/dal/issues)
 
 Better if you get something like this
-![bad news](https://github.com/pfraces/dal/raw/master/badnews.png)
+
+![it works!](https://github.com/pfraces/dal/raw/master/itworks.png)
 
 # Install
 
