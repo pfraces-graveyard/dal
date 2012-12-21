@@ -60,6 +60,10 @@ If no _selector_ is especified, a `div` element is created under
 
 Appends a new element to the element
 
+### el.clone()
+
+Returns a clone of itself
+
 ### el.del()
 
 Removes the element itself
