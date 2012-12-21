@@ -67,9 +67,13 @@ Appends a new element to the element
 
 `elm` can be a string (for example `'p'` or `'div'`) or an existing DOM element
 
+### el.copy()
+
+Returns a copy of itself excluding children
+
 ### el.clone()
 
-Returns a clone of itself
+Returns a clone of itself including its children nodes
 
 ### el.del()
 
