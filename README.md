@@ -47,10 +47,15 @@ Now the API is chainable!
 
 ## el = dal(selector)
 
-Returns the element `el` which id is _selector_
+Returns the element `el` selected by `selector` augmented with useful methods
 
-If no _selector_ is especified, a `div` element is created under
+If no `selector` is especified, a `div` element is created under
 `document.body` (so is visible) and its returned instead
+
+The `selector` can be
+
+*   `string`: this returns the element with id = `selector`
+*   `object`: if an DOM element is received, it will be augmented as well
 
 `el` is augmented with the following methods
 
