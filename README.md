@@ -24,11 +24,11 @@ js:
 
 If you get
 
-![bad news](https://github.com/pfraces/dal/raw/master/badnews.png)
+    Bad news...
 
-please, [create an issue](https://github.com/pfraces/dal/issues)
+please, [create an issue](https://github.com/pfraces/dal/issues) ;)
 
-Better if you get something like this
+But if it works you'll get something like this
 
 ![it works!](https://github.com/pfraces/dal/raw/master/itworks.png)
 
