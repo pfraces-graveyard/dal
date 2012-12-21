@@ -6,16 +6,28 @@ DOM abstraction layer _(homemade alternative to jquery)_
 
 html:
 
-    <div id="foo">Bad news ...</div>
+    <div id="content">Bad news...</div>
     <script src="dal.js"></script>
 
 js:
 
-    dal('foo')
+    var content = dal('content');
+
+    content
       .empty()
       .add('h1', 'It works!')
-      .color('white', 'red')
+      .color('#F99', 'red')
       .size('300px', '300px');
+
+    while (!content.overflow()) content.add('h1', 'foo');
+    content.add('h1', 'bar');
+
+If you get
+![bad news](https://github.com/pfraces/dal/raw/master/badnews.png)
+please, [create an issue](https://github.com/pfraces/dal/issues)
+
+Better if you get something like this
+![bad news](https://github.com/pfraces/dal/raw/master/badnews.png)
 
 # Install
 
