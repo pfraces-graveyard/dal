@@ -115,9 +115,10 @@ Changes the size of the element
 
 ## Misc methods
 
-### el.in
+### el.draw
 
-Adds the element as a child node of the `document.body`
+Adds the element as a child node of the `document.body` so it is visible unless
+it becomes hidden with `display:none` or `visibility:hidden`
 
 ### el.html
 
