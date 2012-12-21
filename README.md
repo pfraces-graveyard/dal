@@ -4,23 +4,23 @@ DOM abstraction layer _(homemade alternative to jquery)_
 
 # Example
 
-html:
+```html
+<div id="content">Bad news...</div>
+<script src="dal.js"></script>
+```
 
-    <div id="content">Bad news...</div>
-    <script src="dal.js"></script>
+```javascript
+var content = dal('content');
 
-js:
+content
+  .empty()
+  .add('h1', 'It works!')
+  .color('#F99', 'red')
+  .size({ width: '300px', height: '300px' });
 
-    var content = dal('content');
-
-    content
-      .empty()
-      .add('h1', 'It works!')
-      .color('#F99', 'red')
-      .size({ width: '300px', height: '300px' });
-
-    while (!content.overflow()) content.add('h1', 'foo');
-    content.add('h1', 'bar');
+while (!content.overflow()) content.add('h1', 'foo');
+content.add('h1', 'bar');
+```
 
 If you get
 
