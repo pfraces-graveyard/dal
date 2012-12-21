@@ -34,7 +34,9 @@ But if it works you'll get something like this
 
 # Install
 
-    $ npm install dal
+```bash
+npm install dal
+```
 
 # Status
 
@@ -54,7 +56,9 @@ being untied to the `document.body` (so is invisible)
 
 You can create an empty element and tie it to the `document.body` with `in`
 
+```javascript
     dal().in();
+```
 
 The `selector` can be
 
@@ -97,7 +101,7 @@ Adds `className` to the element
 
 Hides the element. The layout ignores it
 
-# el.clear()
+### el.clear()
 
 Makes the element invisible, but affecting the layout
 
