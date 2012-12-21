@@ -17,7 +17,7 @@ js:
       .empty()
       .add('h1', 'It works!')
       .color('#F99', 'red')
-      .size('300px', '300px');
+      .size({ width: '300px', height: '300px' });
 
     while (!content.overflow()) content.add('h1', 'foo');
     content.add('h1', 'bar');
@@ -109,9 +109,14 @@ Shows the element
 
 Changes the background and text color of the element
 
-### el.size(width, height)
+### el.size(opts)
 
 Changes the size of the element
+
+`opts` is an object with the following properties:
+
+*   **width:** Determines the width of the element
+*   **height:** Determines the height of the element
 
 ## Misc methods
 
