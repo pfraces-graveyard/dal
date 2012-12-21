@@ -1,6 +1,6 @@
 # DAL
 
-DOM abstraction layer _(homemade alternative to jquery)_
+DOM Astraction Layer. A DOM manipulator micro library
 
 # Example
 
