@@ -90,6 +90,10 @@ Determines if the element is overflowing its bounds
 
 Changes the background and text color of the element
 
+### el.size(width, height)
+
+Changes the size of the element
+
 # Contribute
 
 Get the sources at github: http://github.com/pfraces/dal
