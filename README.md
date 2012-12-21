@@ -95,15 +95,15 @@ Adds `className` to the element
 
 ### el.hide()
 
-Hides the element
+Hides the element. The layout ignores it
+
+# el.clear()
+
+Makes the element invisible, but affecting the layout
 
 ### el.show()
 
 Shows the element
-
-### el.overflow()
-
-Determines if the element is overflowing its bounds
 
 ### el.color(bgcolor, fgcolor)
 
@@ -126,7 +126,12 @@ Sets the `innerHTML` value of the element
 
 ### el.move(x, y)
 
-Makes the element absotule positioned at `x`, `y`
+Makes the element absotule positioned at `(x, y)`
+
+### el.overflow()
+
+Determines if the element is overflowing its bounds
+
 # Contribute
 
 Get the sources at github: http://github.com/pfraces/dal
