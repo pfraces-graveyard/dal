@@ -87,7 +87,7 @@ Removes the element itself
 
 Removes all the element children
 
-## CSS alteration
+## Style
 
 ### el.addClass(className)
 
@@ -115,15 +115,18 @@ Changes the size of the element
 
 ## Misc methods
 
-### el.draw
+### el.draw()
 
 Adds the element as a child node of the `document.body` so it is visible unless
 it becomes hidden with `display:none` or `visibility:hidden`
 
-### el.html
+### el.html(html)
 
 Sets the `innerHTML` value of the element
 
+### el.move(x, y)
+
+Makes the element absotule positioned at `x`, `y`
 # Contribute
 
 Get the sources at github: http://github.com/pfraces/dal
