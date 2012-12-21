@@ -34,9 +34,7 @@ But if it works you'll get something like this
 
 # Install
 
-```bash
-npm install dal
-```
+    $ npm install dal
 
 # Status
 
@@ -54,11 +52,9 @@ Returns the element `el` selected by `selector` augmented with useful methods
 If no `selector` is especified, a `div` element is created and is returned
 being untied to the `document.body` (so is invisible)
 
-You can create an empty element and tie it to the `document.body` with `in`
+You can create an empty element and tie it to the `document.body` with `draw`
 
-```javascript
-    dal().in();
-```
+    dal().draw();
 
 The `selector` can be
 
