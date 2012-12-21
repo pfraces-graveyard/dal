@@ -49,8 +49,12 @@ Now the API is chainable!
 
 Returns the element `el` selected by `selector` augmented with useful methods
 
-If no `selector` is especified, a `div` element is created under
-`document.body` (so is visible) and its returned instead
+If no `selector` is especified, a `div` element is created and is returned
+being untied to the `document.body` (so is invisible)
+
+You can create an empty element and tie it to the `document.body` with `in`
+
+    dal().in();
 
 The `selector` can be
 
@@ -109,7 +113,11 @@ Changes the background and text color of the element
 
 Changes the size of the element
 
-## Misc utilities
+## Misc methods
+
+### el.in
+
+Adds the element as a child node of the `document.body`
 
 ### el.html
 
