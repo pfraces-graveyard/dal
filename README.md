@@ -21,7 +21,7 @@ var content = dal('content');
 content
   .clear()
   .add('h1', 'It works!')
-  .color('#F99', 'red')
+  .color({ bg: '#F99', fg: 'red' })
   .size({ width: '300px', height: '300px' });
 
 while (!content.full()) content.add('h1', 'foo');
