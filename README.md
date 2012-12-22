@@ -67,7 +67,8 @@ Currently the object returned by the `dal` function is just **one** DOM element
 `selector` _(Optional)_:
 
 *   _[String]_ Returns the element with `selector` as tag `id`
-*   _[DOM Element]_ If a DOM element is received, it will be augmented as well
+*   _[Object - DOM Element]_ If a DOM element is received, it will be augmented
+    as well
 
 Returns the element `el` selected by `selector` and augmented with methods for
 its management
@@ -99,7 +100,7 @@ It will become useful when subselection development is complete
 
 ### el.inside(target)
 
-`target`: _[DOM Element]_ Determines if `el` is descendant of `target`.
+`target`: _[Object - DOM Element]_ Determines if `el` is descendant of `target`
 
 ### el.full()
 
@@ -127,8 +128,8 @@ Dettaches `el` from his parent if it has one
 
         dal().add('h1', 'Hello world!')
 
-*   _[DOM Element]_ An existing DOM element. In this case `newEl` is cloned and
-    the clone is attached
+*   _[Object - DOM Element]_ An existing DOM element. In this case `newEl` is
+    cloned and the clone is attached
 
 `content` _(Optional)_: _[String]_ Defauilt content for the new element
 
