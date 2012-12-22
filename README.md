@@ -50,7 +50,7 @@ time.
 # API
 
 The object returned by the `dal` function is composed by an array of the
-selected DOM elements and a collection of methods for manage that elements
+selected DOM elements and a collection of methods for managing the array
 
 There are a few boolean methods that obviously are not chainable but the
 rest of methods are all chainable
@@ -74,10 +74,10 @@ You can create an empty element and attach it to the `document.body` with
 
     dal().attach();
 
-The `selector` can be
+`selector` _(Optional)_:
 
-*   `string`: this returns the element with id = `selector`
-*   `object`: if an DOM element is received, it will be augmented as well
+*   _[String]_ This returns the element with id = `selector`
+*   _[Object]_ If an DOM element is received, it will be augmented as well
 
 `el` is augmented with the following methods
 
@@ -86,17 +86,20 @@ The `selector` can be
 The selection function itself is available as method for do subselections
 available
 
-**Work in progress:**
+**WIP:**
 
-Currently this method only returns an unaugmented DOM element. 
+Currently this method only returns a DOM element without being augmented, so
+it's very useless at this time. 
+
+It will become useful when subselection development is complete
 
 ## Boolean methods
 
 ### el.inside(target)
 
-Determines if `el` is descendant of `target`.
+`target`: _[DOM Element]_
 
-`target`: DOM Element
+Determines if `el` is descendant of `target`.
 
 ### el.full()
 
@@ -118,16 +121,16 @@ Dettaches `el` from his parent if it has one
 
 ### el.add(newEl, content)
 
-Attaches a new element to `el`
-
 `newEl`:
 
-*   String. An element is created and attached
+*   _[String]_ An element is created and attached
 
         dal().add('h1', 'Hello world!')
 
-*   DOM Element. An existing DOM element. In this case `newEl` is cloned and
+*   _[DOM Element]_ An existing DOM element. In this case `newEl` is cloned and
     the clone is attached
+
+`content` _(Optional)_: _[String]_ Attaches a new element to `el`
 
 ### el.del(target)
 
@@ -165,7 +168,7 @@ Makes the element absotule positioned at `(x, y)`
 
 Changes the background and text color of `el`
 
-`opts`: Object
+`opts`: _[Object]_
 
 *   `opts.bg`: Determines the backgroud color
 *   `opts.fg`: Determines the text color
@@ -174,7 +177,7 @@ Changes the background and text color of `el`
 
 Changes the size of `el`
 
-`opts`: Object
+`opts`: _[Object]_
 
 *   `opts.width`: Determines the width of the element
 *   `opts.height`: Determines the height of the element
@@ -185,7 +188,7 @@ Changes the size of `el`
 
 Adds `class` as a CSS class of `el`
 
-`class`: String
+`class`: _[String]_
 
 ## Misc property methods
 
