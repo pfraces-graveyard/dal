@@ -66,13 +66,13 @@ Currently the object returned by the `dal` function is just **one** DOM element
 
 `selector` _(Optional)_:
 
-*   _[String]_ This returns the element with id = `selector`
-*   _[DOM Element]_ If an DOM element is received, it will be augmented as well
+*   _[String]_ Returns the element with `selector` as tag `id`
+*   _[DOM Element]_ If a DOM element is received, it will be augmented as well
 
 Returns the element `el` selected by `selector` and augmented with methods for
 its management
 
-If no `selector` is especified, a `div` element is created and is returned
+If no `selector` is especified, a `div` element is created and is returned,
 being detached from the `document.body` (so is invisible)
 
 You can create an empty element and attach it to the `document.body` with
@@ -99,9 +99,7 @@ It will become useful when subselection development is complete
 
 ### el.inside(target)
 
-`target`: _[DOM Element]_
-
-Determines if `el` is descendant of `target`.
+`target`: _[DOM Element]_ Determines if `el` is descendant of `target`.
 
 ### el.full()
 
@@ -132,7 +130,9 @@ Dettaches `el` from his parent if it has one
 *   _[DOM Element]_ An existing DOM element. In this case `newEl` is cloned and
     the clone is attached
 
-`content` _(Optional)_: _[String]_ Attaches a new element to `el`
+`content` _(Optional)_: _[String]_ Defauilt content for the new element
+
+Attaches a new element to `el`
 
 ### el.del(target)
 
@@ -168,29 +168,29 @@ Makes the element absotule positioned at `(x, y)`
 
 ### el.color(opts)
 
-Changes the background and text color of `el`
-
 `opts`: _[Object]_
 
 *   `opts.bg`: Determines the backgroud color
 *   `opts.fg`: Determines the text color
 
-### el.size(opts)
+Changes the background and text color of `el`
 
-Changes the size of `el`
+### el.size(opts)
 
 `opts`: _[Object]_
 
 *   `opts.width`: Determines the width of the element
 *   `opts.height`: Determines the height of the element
 
+Changes the size of `el`
+
 ## Tag attribute methods
 
 ### el.class.add(class)
 
-Adds `class` as a CSS class of `el`
+`class`: _[String]_ A CSS class to be added
 
-`class`: _[String]_
+Adds `class` as a CSS class of `el`
 
 ## Misc property methods
 
