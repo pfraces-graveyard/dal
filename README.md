@@ -1,6 +1,12 @@
 # DAL
 
-DOM Astraction Layer. A DOM manipulator micro library
+DOM Astraction Layer. A DOM manipulator micro-library
+
+## Featuring
+
+*   Less than 200 lines of annotated source
+*   Chainable API
+*   Dependency-free
 
 # Example
 
@@ -13,12 +19,12 @@ DOM Astraction Layer. A DOM manipulator micro library
 var content = dal('content');
 
 content
-  .empty()
+  .clear()
   .add('h1', 'It works!')
   .color('#F99', 'red')
   .size({ width: '300px', height: '300px' });
 
-while (!content.overflow()) content.add('h1', 'foo');
+while (!content.full()) content.add('h1', 'foo');
 content.add('h1', 'bar');
 ```
 
@@ -28,7 +34,7 @@ If you get
 
 please, [create an issue](https://github.com/pfraces/dal/issues) ;)
 
-But if it works you'll get something like this
+But if it works you'll end with something like this
 
 ![it works!](https://github.com/pfraces/dal/raw/master/itworks.png)
 
@@ -43,18 +49,30 @@ time.
 
 # API
 
-Now the API is chainable!
+The object returned by the `dal` function is composed by an array of the
+selected DOM elements and a collection of methods for manage that elements
 
-## el = dal(selector)
+There are a few boolean methods that obviously are not chainable but the
+rest of methods are all chainable
+
+**WIP:**
+
+Currently the object returned by the `dal` function is just **one** DOM element
+**augmented** with the collection of methods
+
+## Selectors
+
+### el = dal(selector)
 
 Returns the element `el` selected by `selector` augmented with useful methods
 
 If no `selector` is especified, a `div` element is created and is returned
-being untied to the `document.body` (so is invisible)
+being detached from the `document.body` (so is invisible)
 
-You can create an empty element and tie it to the `document.body` with `draw`
+You can create an empty element and attach it to the `document.body` with
+`attach`
 
-    dal().draw();
+    dal().attach();
 
 The `selector` can be
 
@@ -63,79 +81,117 @@ The `selector` can be
 
 `el` is augmented with the following methods
 
-## Element management
+### el.sel(selector)
 
-### el.add(elm, content)
+The selection function itself is available as method for do subselections
+available
 
-Appends a new element to the element
+**Work in progress:**
 
-`elm` can be a string (for example `'p'` or `'div'`) or an existing DOM element
+Currently this method only returns an unaugmented DOM element. 
+
+## Boolean methods
+
+### el.inside(target)
+
+Determines if `el` is descendant of `target`.
+
+`target`: DOM Element
+
+### el.full()
+
+Determines if `el` is overflowing its bounds
+
+### el.empty()
+
+Determines if `el` has any child
+
+## Element management methods
+
+### el.attach()
+
+Attaches `el` to the `document.body` if it was not attached yet
+
+### el.detach()
+
+Dettaches `el` from his parent if it has one
+
+### el.add(newEl, content)
+
+Attaches a new element to `el`
+
+`newEl`:
+
+*   String. An element is created and attached
+
+        dal().add('h1', 'Hello world!')
+
+*   DOM Element. An existing DOM element. In this case `newEl` is cloned and
+    the clone is attached
+
+### el.del(target)
+
+If `target` is descendant of `el`, `target` is detached from his parent
+
+### el.clear()
+
+Removes all the children of `el`
 
 ### el.copy()
 
-Returns a copy of itself excluding children
+Returns a copy of itself excluding its children nodes
 
 ### el.clone()
 
 Returns a clone of itself including its children nodes
 
-### el.del()
-
-Removes the element itself
-
-### el.empty()
-
-Removes all the element children
-
-## Style
-
-### el.addClass(className)
-
-Adds `className` to the element
-
-### el.hide()
-
-Hides the element. The layout ignores it
-
-### el.clear()
-
-Makes the element invisible, but affecting the layout
+## CSS layout methods
 
 ### el.show()
 
-Shows the element
+Makes `el` visible (is if is attached to the `document.body`)
 
-### el.color(bgcolor, fgcolor)
+### el.hide()
 
-Changes the background and text color of the element
-
-### el.size(opts)
-
-Changes the size of the element
-
-`opts` is an object with the following properties:
-
-*   **width:** Determines the width of the element
-*   **height:** Determines the height of the element
-
-## Misc methods
-
-### el.draw()
-
-Adds the element as a child node of the `document.body` so it is visible unless
-it becomes hidden with `display:none` or `visibility:hidden`
-
-### el.html(html)
-
-Sets the `innerHTML` value of the element
+Makes `el` invisible and ignored by the layout, but behaving as when visible
 
 ### el.move(x, y)
 
 Makes the element absotule positioned at `(x, y)`
 
-### el.overflow()
+## CSS style methods
 
-Determines if the element is overflowing its bounds
+### el.color(opts)
+
+Changes the background and text color of `el`
+
+`opts`: Object
+
+*   `opts.bg`: Determines the backgroud color
+*   `opts.fg`: Determines the text color
+
+### el.size(opts)
+
+Changes the size of `el`
+
+`opts`: Object
+
+*   `opts.width`: Determines the width of the element
+*   `opts.height`: Determines the height of the element
+
+## Tag attribute methods
+
+### el.class.add(class)
+
+Adds `class` as a CSS class of `el`
+
+`class`: String
+
+## Misc property methods
+
+### el.html(html)
+
+Sets the `innerHTML` value of the element
 
 # Contribute
 
