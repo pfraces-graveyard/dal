@@ -67,9 +67,10 @@ Currently the object returned by the `dal` function is just **one** DOM element
 `selector` _(Optional)_:
 
 *   _[String]_ This returns the element with id = `selector`
-*   _[Object]_ If an DOM element is received, it will be augmented as well
+*   _[DOM Element]_ If an DOM element is received, it will be augmented as well
 
-Returns the element `el` selected by `selector` augmented with useful methods
+Returns the element `el` selected by `selector` and augmented with methods for
+its management
 
 If no `selector` is especified, a `div` element is created and is returned
 being detached from the `document.body` (so is invisible)
@@ -83,8 +84,9 @@ You can create an empty element and attach it to the `document.body` with
 
 ### el.sel(selector)
 
-The selection function itself is available as method for do subselections
-available
+The selector function used by `dal()` is made available.
+The difference is that while `dal` searches on all the elements in the
+`document`, `sel` only searches in the elements holded by `el`
 
 **WIP:**
 
