@@ -1,9 +1,11 @@
 {
   "name": "dal",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "DOM Abstraction Layer",
   "main": "./lib/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jslib": *
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +14,9 @@
     "url": "https://github.com/pfraces/dal.git"
   },
   "keywords": [
-    "dal",
     "dom",
-    "jquery"
+    "jquery",
+    "zepto"
   ],
   "author": "Pau Fracés",
   "license": "MIT"

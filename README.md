@@ -6,7 +6,6 @@ DOM Astraction Layer. A DOM manipulator micro-library
 
 *   Less than 200 lines of annotated source
 *   Chainable API
-*   Dependency-free
 
 # Example
 
