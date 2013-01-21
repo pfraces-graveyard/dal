@@ -264,13 +264,18 @@ visible</p>             </td>             <td class="code">               <div c
     <span class="k">return</span> <span class="nx">self</span><span class="p">;</span>
   <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-34">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-34">&#182;</a>               </div>               <h2>dal.move(opts)</h2>
 
-<p>Makes the element positioned at <code>(opts.x, opts.y)</code></p>
+<p>Makes the element absolute positioned at <code>(opts.x, opts.y)</code></p>
 
-<p>If the (optional) <code>opts.relative</code> is set to <code>true</code> the element is relative
-positioned, else is absolute positioned</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">self</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">opts</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">relative</span> <span class="o">?</span> <span class="kc">undefined</span> <span class="o">:</span> <span class="s1">&#39;absolute&#39;</span><span class="p">;</span>
+<p>Setting the optional <code>opts.relative</code> to <code>true</code> causes the movement to be
+relative to its parent. Its required to alter the parent <code>position</code> to
+<code>relative</code> for this to work, so this setting may cause unexpected
+behaviour.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">self</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">opts</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s1">&#39;absolute&#39;</span><span class="p">;</span>
     <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span> 
     <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">opts</span><span class="p">.</span><span class="nx">relative</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">self</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s1">&#39;relative&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
     <span class="k">return</span> <span class="nx">self</span><span class="p">;</span>
   <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-35">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-35">&#182;</a>               </div>               <h1>CSS style methods</h1>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-36">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-36">&#182;</a>               </div>               <h2>dal.color(opts)</h2>
 
