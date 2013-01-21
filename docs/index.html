@@ -13,13 +13,24 @@ and used, but also detached from the <code>document.body</code> (so is invisible
 default</p>
 
 <ul>
-<li><em>[String]</em> id of the DOM element</li>
+<li><em>[String]</em> id of the DOM element.
+  If it does not exist, returns an attached div element, using the
+  argument received as id of that div.</li>
 <li><em>[Object: DOM Element]</em> </li>
 </ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">dal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="p">{};</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">el</span><span class="p">)</span> <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">jslib</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nx">isString</span><span class="p">())</span> <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
-  <span class="k">else</span> <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nx">el</span><span class="p">;</span> </pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Save some original settings</p>             </td>             <td class="code">               <div class="highlight"><pre>  
+  
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">jslib</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nx">isString</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">dal</span><span class="p">();</span>
+      <span class="nx">div</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">el</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">div</span><span class="p">.</span><span class="nx">attach</span><span class="p">().</span><span class="nx">DOM</span><span class="p">;</span>
+    <span class="p">})();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span> <span class="o">=</span> <span class="nx">el</span><span class="p">;</span> 
+  <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Save some original settings</p>             </td>             <td class="code">               <div class="highlight"><pre>  
   <span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">self</span><span class="p">.</span><span class="nx">orig</span> <span class="o">=</span> <span class="p">{</span>
       <span class="nx">display</span><span class="o">:</span>    <span class="nx">self</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span>
