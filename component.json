@@ -1,0 +1,15 @@
+{
+  "name": "dal",
+  "repo": "pfraces/dal",
+  "description": "DOM Abstraction Layer",
+  "version": "0.1.0",
+  "dependencies": {
+    "jsl": "*"
+  },
+  "keywords": [
+    "dom",
+    "jquery",
+    "zepto"
+  ],
+  "license": "MIT"
+}
