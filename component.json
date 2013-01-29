@@ -4,7 +4,7 @@
   "description": "DOM Abstraction Layer",
   "version": "0.1.0",
   "dependencies": {
-    "jsl": "*"
+    "pfraces/jsl": "*"
   },
   "scripts": ["index.js"],
   "keywords": [
