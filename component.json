@@ -2,7 +2,7 @@
   "name": "dal",
   "repo": "pfraces/dal",
   "description": "DOM Abstraction Layer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "pfraces/jsl": "*"
   },
