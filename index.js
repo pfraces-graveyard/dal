@@ -1,7 +1,7 @@
 var jsl = require('jsl');
 
 var dal = module.exports = function (el) {
-  return new Dal(obj);
+  return new Dal(el);
 };
 
 var Dal = function (el) {
