@@ -194,6 +194,11 @@ Dal.prototype.move = function (opts) {
   return this;
 };
 
+Dal.prototype.on = function () {
+  this.DOM.addEventListener.apply(this.DOM, jsl(arguments).toArray());
+  return this;
+};
+
 Dal.prototype.color = function (opts) {
   if (typeof opts.bg !== 'undefined') {
     this.DOM.style.background = opts.bg;
