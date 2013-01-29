@@ -6,6 +6,7 @@
   "dependencies": {
     "jsl": "*"
   },
+  "scripts": ["index.js"],
   "keywords": [
     "dom",
     "jquery",
